@@ -6,17 +6,14 @@ import com.grt.digiops.account.repo.AppUserRepo;
 import com.grt.digiops.account.repo.RoleRepo;
 import lombok.RequiredArgsConstructor;
 
-//import org.apache.log4j.Logger;
 import lombok.extern.slf4j.Slf4j;
 
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -42,11 +39,8 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
             log.info("User found in the database: {}", appUsername);
         }
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        appUser.getRoles().forEach(role ->{
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        });
+        appUser.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getName())));
         return new User(appUser.getUsername(),appUser.getPassword(),authorities);
-       // return new User("gavin","$2a$10$zMrjDiYY15ZDsX98g11cru3MC/VPexmwPjo/Oee/pz8ZCJ3FFILmy",authorities);
 
     }
 
