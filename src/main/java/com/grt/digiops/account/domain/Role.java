@@ -1,4 +1,4 @@
-package com.grt.digiOps.account.domain;
+package com.grt.digiops.account.domain;
 
 import javax.persistence.*;
 

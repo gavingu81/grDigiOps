@@ -1,8 +1,8 @@
-package com.grt.digiOps.account.api;
+package com.grt.digiops.account.api;
 
-import com.grt.digiOps.account.domain.AppUser;
-import com.grt.digiOps.account.domain.Role;
-import com.grt.digiOps.account.service.AppUserService;
+import com.grt.digiops.account.domain.AppUser;
+import com.grt.digiops.account.domain.Role;
+import com.grt.digiops.account.service.AppUserService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

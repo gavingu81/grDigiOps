@@ -1,4 +1,4 @@
-package com.grt.digiOps.account.domain;
+package com.grt.digiops.account.domain;
 
 import java.util.ArrayList;
 import java.util.Collection;

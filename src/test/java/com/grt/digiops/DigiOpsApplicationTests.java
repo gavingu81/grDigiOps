@@ -1,4 +1,4 @@
-package com.grt.digiOps;
+package com.grt.digiops;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

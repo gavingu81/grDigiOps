@@ -1,6 +1,6 @@
-package com.grt.digiOps.account.repo;
+package com.grt.digiops.account.repo;
 
-import com.grt.digiOps.account.domain.Role;
+import com.grt.digiops.account.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepo extends JpaRepository<Role, Long> {

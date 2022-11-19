@@ -1,7 +1,7 @@
-package com.grt.digiOps.account.service;
+package com.grt.digiops.account.service;
 
-import com.grt.digiOps.account.domain.AppUser;
-import com.grt.digiOps.account.domain.Role;
+import com.grt.digiops.account.domain.AppUser;
+import com.grt.digiops.account.domain.Role;
 
 import java.util.List;
 
