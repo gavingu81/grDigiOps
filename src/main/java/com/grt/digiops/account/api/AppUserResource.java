@@ -10,6 +10,7 @@ import com.grt.digiops.account.domain.Role;
 import com.grt.digiops.account.service.AppUserService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -28,6 +29,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
+@Slf4j
 public class AppUserResource {
     private final AppUserService appUserService;
     @GetMapping("/users")
@@ -44,6 +46,7 @@ public class AppUserResource {
     @PostMapping("/role/save")
     public ResponseEntity<Role>saveRole(@RequestBody Role role){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
+        log.info("URI created {}",uri.toString());
         return ResponseEntity.created(uri).body(appUserService.saveRole(role));
     }
 
