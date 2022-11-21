@@ -56,14 +56,13 @@ public  class CustomAuthenticationFilter extends UsernamePasswordAuthenticationF
                 .sign(algorithm);
 
         //refresh token generation
-        String refresh_token = JWT.create()
+         String refresh_token = JWT.create()
                 .withSubject(user.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis()+30*60*1000))
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
 
-//        response.setHeader("access_toke",access_toke);
-//        response.setHeader("refresh_token",refresh_toke);
+
         log.info("{} successfully logins",user.getUsername());
         Map<String, String> tokens = new HashMap<>();
         tokens.put("access_token",access_token);
