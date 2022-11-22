@@ -12,4 +12,7 @@ public interface AppUserService {
     AppUser getAppUser(String appUserName);
     List<AppUser> getAppUsers();
 
+    AppUser getAppUserByEmail(String email);
+    AppUser getAppUserByTelephone(String telephone);
+
 }

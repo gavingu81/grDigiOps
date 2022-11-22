@@ -32,10 +32,10 @@ public class DigiOpsApplication {
 			appUserService.saveRole(new Role(null,"ROLE_ADMIN"));
 			appUserService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
 
-			appUserService.saveAppUser(new AppUser(null,"Gavin GU","gavin","1234",new ArrayList<>()));
-			appUserService.saveAppUser(new AppUser(null,"Kelvin SHEN","kelvin","1234",new ArrayList<>()));
-			appUserService.saveAppUser(new AppUser(null,"Jeff XIA","jeff","1234",new ArrayList<>()));
-			appUserService.saveAppUser(new AppUser(null,"Jianguo ZHANG","jianguo", "1234",new ArrayList<>()));
+			appUserService.saveAppUser(new AppUser(null,"Gavin GU","gavin","1234","gavin.gu@grt.com","12345678901",new ArrayList<>()));
+			appUserService.saveAppUser(new AppUser(null,"Kelvin SHEN","kelvin","1234","kelvin.shen@grt.com","12345678901",new ArrayList<>()));
+			appUserService.saveAppUser(new AppUser(null,"Jeff XIA","jeff","1234","jeff.xia@grt.com","12345678901",new ArrayList<>()));
+			appUserService.saveAppUser(new AppUser(null,"Jianguo ZHANG","jianguo", "1234","jianguo.zhang@grt.com","12345678901",new ArrayList<>()));
 
 			appUserService.addRoleToAppUser("gavin","ROLE_ADMIN");
 			appUserService.addRoleToAppUser("gavin","ROLE_USER");

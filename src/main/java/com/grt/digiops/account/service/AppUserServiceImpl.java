@@ -30,17 +30,18 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public UserDetails loadUserByUsername(String appUsername) throws UsernameNotFoundException {
-        AppUser appUser = appUserRepo.findByUsername(appUsername);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        //AppUser appUser = appUserRepo.findByUsername(appUsername);
+        AppUser appUser = appUserRepo.findByEmail(email);
         if (appUser == null){
-            log.info("User not found in the database");
+            log.info("User with email:{} not found in the database",email);
             throw new UsernameNotFoundException("User not found in the database");
         } else {
-            log.info("User found in the database: {}", appUsername);
+            log.info("User found in the database email: {}", email );
         }
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
         appUser.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getName())));
-        return new User(appUser.getUsername(),appUser.getPassword(),authorities);
+        return new User(appUser.getEmail(),appUser.getPassword(),authorities);
 
     }
 
@@ -79,6 +80,15 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
         return appUserRepo.findAll();
     }
 
+    @Override
+    public AppUser getAppUserByEmail(String email) {
+        return appUserRepo.findByEmail(email);
+    }
+
+    @Override
+    public AppUser getAppUserByTelephone(String telephone){
+        return appUserRepo.findByTelephone(telephone);
+    }
 
 
 }
